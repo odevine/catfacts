@@ -1,15 +1,10 @@
 var HTTPS = require('https'),
     botID = process.env.BOT_ID,
     myArray = require('./catfactarray.js'),
-    factNumber = 1;
 
 function respond() {
     var request = JSON.parse(this.req.chunks[0]),
         botRegex = /catfacts/i;
-
-    if(factNumber == 13) {
-        factnumber = 1;
-    }
 
     if(request.text && botRegex.test(request.text)) {
         this.res.writeHead(200);
@@ -19,7 +14,6 @@ function respond() {
             console.log('posted!')
         }, 500);
         this.res.end();
-        factNumber++;
 
     } else {
         console.log("not a valid message to respond to");
@@ -32,9 +26,7 @@ function postMessage(n) {
     var rand, options, body, botReq;
 
     rand =  myArray[Math.floor(Math.random() * myArray.length)];
-
     
-
     options = {
         hostname: 'api.groupme.com',
         path: '/v3/bots/post',
