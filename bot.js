@@ -9,10 +9,10 @@ function respond() {
     if(request.text && botRegex.test(request.text)) {
         this.res.writeHead(200);
         // wait at least 500ms before posting
-        setTimeout(function()) {
+        setTimeout(function) {
             postMessage();
             console.log('posted!')
-        }, 500);
+        }, 750);
         this.res.end();
 
     } 
