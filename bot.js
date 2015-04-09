@@ -4,7 +4,7 @@ var HTTPS = require('https'),
 
 function respond() {
     var request = JSON.parse(this.req.chunks[0]),
-        botRegex = /cat/i;
+        botRegex = /catfacts/i;
 
     if(factNumber == 13) {
         factnumber = 1;
