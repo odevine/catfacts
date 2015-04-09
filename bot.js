@@ -22,7 +22,7 @@ function respond() {
     }
 }
 
-function postMessage(n) {
+function postMessage() {
     var rand, options, body, botReq;
 
     rand =  myArray[Math.floor(Math.random() * myArray.length)];
