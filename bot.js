@@ -1,6 +1,6 @@
 var HTTPS = require('https'),
     botID = process.env.BOT_ID,
-    myArray = require('./catfactarray.js'),
+    myArray = require('./catfactarray.js');
 
 function respond() {
     var request = JSON.parse(this.req.chunks[0]),
@@ -9,13 +9,13 @@ function respond() {
     if(request.text && botRegex.test(request.text)) {
         this.res.writeHead(200);
         // wait at least 500ms before posting
-        setTimeout(function) {
+        setTimeout(function() {
             postMessage();
-            console.log('posted!')
-        }, 750);
+            console.log('posted!');
+        }, 500);
         this.res.end();
 
-    } 
+    }
 
     else {
         console.log("not a valid message to respond to");
